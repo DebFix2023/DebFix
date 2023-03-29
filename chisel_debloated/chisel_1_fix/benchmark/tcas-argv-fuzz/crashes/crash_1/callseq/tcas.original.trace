@@ -1,0 +1,49 @@
+benchmark/tcas-argv-fuzz/src/tcas.original.out
+benchmark/tcas-argv-fuzz/crashes/crash_1/input
+
+FUNC_CALL;main(int,char **);
+
+STMT_EXEC;;39
+
+STMT_EXEC;;632
+
+STMT_EXEC;;635
+
+STMT_EXEC;;638
+
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);
+Error: Command line arguments are
+
+FUNC_RETURN;;
+
+STMT_EXEC;;639
+
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);
+Cur_Vertical_Sep, High_Confidence, Two_of_Three_Reports_Valid
+
+FUNC_RETURN;;
+
+STMT_EXEC;;640
+
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);
+Own_Tracked_Alt, Own_Tracked_Alt_Rate, Other_Tracked_Alt
+
+FUNC_RETURN;;
+
+STMT_EXEC;;641
+
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);
+Alt_Layer_Value, Up_Separation, Down_Separation
+
+FUNC_RETURN;;
+
+STMT_EXEC;;642
+
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);
+Other_RAC, Other_Capability, Climb_Inhibit
+
+FUNC_RETURN;;
+
+STMT_EXEC;;643
+
+FUNC_CALL;exit();

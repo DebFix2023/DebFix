@@ -1,0 +1,8 @@
+#!/bin/bash
+fixedFileBin=$1
+
+echo $fixedFileBin
+
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+{ timeout -k 1 1 $fixedFileBin < $SCRIPT_DIR/input; }
