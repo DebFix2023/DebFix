@@ -1,0 +1,12 @@
+++++++++ Matched 1 ++++++++
+FUNC_CALL;main(int,char **);0;main:0:1
+-------- Matched 1 --------
+
+++++++++ Unmatched 2 ++++++++
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);638;main:0:1,fprintf:638:1
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);639;main:0:1,fprintf:639:1
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);640;main:0:1,fprintf:640:1
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);641;main:0:1,fprintf:641:1
+FUNC_CALL;fprintf(FILE *__restrict,const char *__restrict);642;main:0:1,fprintf:642:1
+FUNC_CALL;exit();643;main:0:1,exit:643:1
+-------- Unmatched 2 --------

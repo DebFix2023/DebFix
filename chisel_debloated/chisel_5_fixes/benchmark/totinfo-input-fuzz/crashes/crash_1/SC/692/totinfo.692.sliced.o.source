@@ -1,0 +1,1154 @@
+
+benchmark/totinfo-input-fuzz/crashes/crash_1/SC/692/totinfo.692.sliced.o:	file format ELF64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 main:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:68
+; {
+       0: 55                           	pushq	%rbp
+       1: 48 89 e5                     	movq	%rsp, %rbp
+       4: 48 81 ec 80 00 00 00         	subq	$128, %rsp
+       b: c7 45 98 00 00 00 00         	movl	$0, -104(%rbp)
+      12: 89 7d 9c                     	movl	%edi, -100(%rbp)
+      15: 48 89 75 88                  	movq	%rsi, -120(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:87
+;     totinfo = 0.0;
+      19: 0f 57 c0                     	xorps	%xmm0, %xmm0
+      1c: f2 0f 11 45 d0               	movsd	%xmm0, -48(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:88
+;     totdf = 0;
+      21: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:94
+;           tmp___6 = fgets((char *__restrict)(line), 256, (FILE * __restrict) stdin);
+      28: 48 8b 14 25 00 00 00 00      	movq	0, %rdx
+      30: 48 bf 00 00 00 00 00 00 00 00	movabsq	$0, %rdi
+      3a: be 00 01 00 00               	movl	$256, %esi
+      3f: e8 00 00 00 00               	callq	0 <main+0x44>
+      44: 48 89 45 b0                  	movq	%rax, -80(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:96
+;         if (!((unsigned long)tmp___6 != (unsigned long)((void *)0)))
+      48: 48 8b 45 b0                  	movq	-80(%rbp), %rax
+      4c: 48 83 f8 00                  	cmpq	$0, %rax
+      50: 0f 84 20 02 00 00            	je	544 <main+0x276>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:100
+;         p = line;
+      56: 48 b8 00 00 00 00 00 00 00 00	movabsq	$0, %rax
+      60: 48 89 45 e8                  	movq	%rax, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:105
+;             if ((int)*p != 0)
+      64: 48 8b 45 e8                  	movq	-24(%rbp), %rax
+      68: 0f be 00                     	movsbl	(%rax), %eax
+      6b: 83 f8 00                     	cmpl	$0, %eax
+      6e: 74 38                        	je	56 <main+0xa8>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:108
+;                 tmp = __ctype_b_loc();
+      70: e8 00 00 00 00               	callq	0 <main+0x75>
+      75: 48 89 45 a0                  	movq	%rax, -96(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:110
+;               if (!((int const) * (*tmp + (int)*p) & 8192))
+      79: 48 8b 45 a0                  	movq	-96(%rbp), %rax
+      7d: 48 8b 00                     	movq	(%rax), %rax
+      80: 48 8b 4d e8                  	movq	-24(%rbp), %rcx
+      84: 0f be 09                     	movsbl	(%rcx), %ecx
+      87: 48 63 c9                     	movslq	%ecx, %rcx
+      8a: 0f b7 04 48                  	movzwl	(%rax,%rcx,2), %eax
+      8e: 25 00 20 00 00               	andl	$8192, %eax
+      93: 83 f8 00                     	cmpl	$0, %eax
+      96: 74 10                        	je	16 <main+0xa8>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:119
+;             p++;
+      98: 48 8b 45 e8                  	movq	-24(%rbp), %rax
+      9c: 48 05 01 00 00 00            	addq	$1, %rax
+      a2: 48 89 45 e8                  	movq	%rax, -24(%rbp)
+      a6: eb bc                        	jmp	-68 <main+0x64>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:123
+;         if ((int)*p == 0)
+      a8: 48 8b 45 e8                  	movq	-24(%rbp), %rax
+      ac: 0f be 00                     	movsbl	(%rax), %eax
+      af: 83 f8 00                     	cmpl	$0, %eax
+      b2: 75 05                        	jne	5 <main+0xb9>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:94
+;           tmp___6 = fgets((char *__restrict)(line), 256, (FILE * __restrict) stdin);
+      b4: e9 6f ff ff ff               	jmp	-145 <main+0x28>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:127
+;         if ((int)*p == 35)
+      b9: 48 8b 45 e8                  	movq	-24(%rbp), %rax
+      bd: 0f be 00                     	movsbl	(%rax), %eax
+      c0: 83 f8 23                     	cmpl	$35, %eax
+      c3: 74 ef                        	je	-17 <main+0xb4>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:135
+;           tmp___0 = sscanf((char const *__restrict)p, (char const *__restrict) "%d %d\n", &r, &c);
+      c5: 48 8b 7d e8                  	movq	-24(%rbp), %rdi
+      c9: 48 be 00 00 00 00 00 00 00 00	movabsq	$0, %rsi
+      d3: 48 ba 00 00 00 00 00 00 00 00	movabsq	$0, %rdx
+      dd: 48 b9 00 00 00 00 00 00 00 00	movabsq	$0, %rcx
+      e7: b0 00                        	movb	$0, %al
+      e9: e8 00 00 00 00               	callq	0 <main+0xee>
+      ee: 89 45 c8                     	movl	%eax, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:137
+;         if (tmp___0 != 2)
+      f1: 83 7d c8 02                  	cmpl	$2, -56(%rbp)
+      f5: 0f 85 9b 01 00 00            	jne	411 <main+0x296>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:144
+;         if (r * c > 1000)
+      fb: 8b 04 25 00 00 00 00         	movl	0, %eax
+     102: 0f af 04 25 00 00 00 00      	imull	0, %eax
+     10a: 3d e8 03 00 00               	cmpl	$1000, %eax
+     10f: 0f 8f 81 01 00 00            	jg	385 <main+0x296>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:151
+;         i = 0;
+     115: c7 45 f4 00 00 00 00         	movl	$0, -12(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:156
+;             if (!(i < r))
+     11c: 8b 45 f4                     	movl	-12(%rbp), %eax
+     11f: 3b 04 25 00 00 00 00         	cmpl	0, %eax
+     126: 7d 68                        	jge	104 <main+0x190>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:160
+;             j = 0;
+     128: c7 45 f8 00 00 00 00         	movl	$0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:165
+;                 if (!(j < c))
+     12f: 8b 45 f8                     	movl	-8(%rbp), %eax
+     132: 3b 04 25 00 00 00 00         	cmpl	0, %eax
+     139: 7d 4a                        	jge	74 <main+0x185>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:170
+;                   tmp___1 = scanf((char const *__restrict) " %ld", &f[i * c + j]);
+     13b: 8b 45 f4                     	movl	-12(%rbp), %eax
+     13e: 0f af 04 25 00 00 00 00      	imull	0, %eax
+     146: 03 45 f8                     	addl	-8(%rbp), %eax
+     149: 48 98                        	cltq
+     14b: 48 c1 e0 03                  	shlq	$3, %rax
+     14f: 48 be 00 00 00 00 00 00 00 00	movabsq	$0, %rsi
+     159: 48 01 c6                     	addq	%rax, %rsi
+     15c: 48 bf 00 00 00 00 00 00 00 00	movabsq	$0, %rdi
+     166: b0 00                        	movb	$0, %al
+     168: e8 00 00 00 00               	callq	0 <main+0x16d>
+     16d: 89 45 cc                     	movl	%eax, -52(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:172
+;                 if (tmp___1 != 1)
+     170: 83 7d cc 01                  	cmpl	$1, -52(%rbp)
+     174: 0f 85 1a 01 00 00            	jne	282 <main+0x294>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:179
+;                 j++;
+     17a: 8b 45 f8                     	movl	-8(%rbp), %eax
+     17d: 83 c0 01                     	addl	$1, %eax
+     180: 89 45 f8                     	movl	%eax, -8(%rbp)
+     183: eb aa                        	jmp	-86 <main+0x12f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:183
+;             i++;
+     185: 8b 45 f4                     	movl	-12(%rbp), %eax
+     188: 83 c0 01                     	addl	$1, %eax
+     18b: 89 45 f4                     	movl	%eax, -12(%rbp)
+     18e: eb 8c                        	jmp	-116 <main+0x11c>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:188
+;           info = InfoTbl(r, c, (long const *)(f), &infodf);
+     190: 8b 3c 25 00 00 00 00         	movl	0, %edi
+     197: 8b 34 25 00 00 00 00         	movl	0, %esi
+     19e: 48 ba 00 00 00 00 00 00 00 00	movabsq	$0, %rdx
+     1a8: 48 8d 4d dc                  	leaq	-36(%rbp), %rcx
+     1ac: e8 00 00 00 00               	callq	0 <main+0x1b1>
+     1b1: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:190
+;         if (info >= 0.0)
+     1b6: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     1bb: 0f 57 c9                     	xorps	%xmm1, %xmm1
+     1be: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     1c2: 72 2f                        	jb	47 <main+0x1f3>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:193
+;             tmp___2 = QChiSq(info, infodf);
+     1c4: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     1c9: 8b 7d dc                     	movl	-36(%rbp), %edi
+     1cc: e8 00 00 00 00               	callq	0 <main+0x1d1>
+     1d1: f2 0f 11 45 90               	movsd	%xmm0, -112(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:195
+;             totinfo += info;
+     1d6: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     1db: f2 0f 58 45 d0               	addsd	-48(%rbp), %xmm0
+     1e0: f2 0f 11 45 d0               	movsd	%xmm0, -48(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:196
+;             totdf += infodf;
+     1e5: 8b 45 dc                     	movl	-36(%rbp), %eax
+     1e8: 03 45 fc                     	addl	-4(%rbp), %eax
+     1eb: 89 45 fc                     	movl	%eax, -4(%rbp)
+     1ee: e9 c1 fe ff ff               	jmp	-319 <main+0xb4>
+     1f3: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:201
+;           if (info < -3.5)
+     1fb: 66 0f 2e 45 e0               	ucomisd	-32(%rbp), %xmm0
+     200: 76 13                        	jbe	19 <main+0x215>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:203
+;             tmp___5 = "out of memory\n";
+     202: 48 b8 00 00 00 00 00 00 00 00	movabsq	$0, %rax
+     20c: 48 89 45 a8                  	movq	%rax, -88(%rbp)
+     210: e9 9f fe ff ff               	jmp	-353 <main+0xb4>
+     215: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:207
+;             if (info < -2.5)
+     21d: 66 0f 2e 45 e0               	ucomisd	-32(%rbp), %xmm0
+     222: 76 10                        	jbe	16 <main+0x234>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:209
+;               tmp___4 = "table too small\n";
+     224: 48 b8 00 00 00 00 00 00 00 00	movabsq	$0, %rax
+     22e: 48 89 45 c0                  	movq	%rax, -64(%rbp)
+     232: eb 35                        	jmp	53 <main+0x269>
+     234: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:213
+;               if (info < -1.5)
+     23c: 66 0f 2e 45 e0               	ucomisd	-32(%rbp), %xmm0
+     241: 76 10                        	jbe	16 <main+0x253>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:215
+;                 tmp___3 = "negative freq\n";
+     243: 48 b8 00 00 00 00 00 00 00 00	movabsq	$0, %rax
+     24d: 48 89 45 b8                  	movq	%rax, -72(%rbp)
+     251: eb 0e                        	jmp	14 <main+0x261>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:219
+;                 tmp___3 = "table all zeros\n";
+     253: 48 b8 00 00 00 00 00 00 00 00	movabsq	$0, %rax
+     25d: 48 89 45 b8                  	movq	%rax, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:221
+;               tmp___4 = tmp___3;
+     261: 48 8b 45 b8                  	movq	-72(%rbp), %rax
+     265: 48 89 45 c0                  	movq	%rax, -64(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:223
+;             tmp___5 = tmp___4;
+     269: 48 8b 45 c0                  	movq	-64(%rbp), %rax
+     26d: 48 89 45 a8                  	movq	%rax, -88(%rbp)
+     271: e9 3e fe ff ff               	jmp	-450 <main+0xb4>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:232
+;     if (totdf <= 0)
+     276: 83 7d fc 00                  	cmpl	$0, -4(%rbp)
+     27a: 7e 1c                        	jle	28 <main+0x298>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:240
+;       tmp___7 = QChiSq(totinfo, totdf);
+     27c: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     281: 8b 7d fc                     	movl	-4(%rbp), %edi
+     284: e8 00 00 00 00               	callq	0 <main+0x289>
+     289: 31 c0                        	xorl	%eax, %eax
+     28b: 48 81 c4 80 00 00 00         	addq	$128, %rsp
+     292: 5d                           	popq	%rbp
+     293: c3                           	retq
+     294: eb 02                        	jmp	2 <main+0x298>
+     296: eb 00                        	jmp	0 <main+0x298>
+     298: 31 c0                        	xorl	%eax, %eax
+     29a: 48 81 c4 80 00 00 00         	addq	$128, %rsp
+     2a1: 5d                           	popq	%rbp
+     2a2: c3                           	retq
+     2a3: 90                           	nop
+     2a4: 90                           	nop
+     2a5: 90                           	nop
+     2a6: 90                           	nop
+     2a7: 90                           	nop
+     2a8: 90                           	nop
+     2a9: 90                           	nop
+     2aa: 90                           	nop
+     2ab: 90                           	nop
+     2ac: 90                           	nop
+     2ad: 90                           	nop
+     2ae: 90                           	nop
+     2af: 90                           	nop
+
+00000000000002b0 InfoTbl:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:614
+; {
+     2b0: 55                           	pushq	%rbp
+     2b1: 48 89 e5                     	movq	%rsp, %rbp
+     2b4: 48 81 ec c0 00 00 00         	subq	$192, %rsp
+     2bb: 89 7d e4                     	movl	%edi, -28(%rbp)
+     2be: 89 75 f4                     	movl	%esi, -12(%rbp)
+     2c1: 48 89 55 90                  	movq	%rdx, -112(%rbp)
+     2c5: 48 89 8d 48 ff ff ff         	movq	%rcx, -184(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:638
+;     rdf = r___0 - 1;
+     2cc: 8b 45 e4                     	movl	-28(%rbp), %eax
+     2cf: 83 e8 01                     	subl	$1, %eax
+     2d2: 89 45 d0                     	movl	%eax, -48(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:639
+;     cdf = c___0 - 1;
+     2d5: 8b 45 f4                     	movl	-12(%rbp), %eax
+     2d8: 83 e8 01                     	subl	$1, %eax
+     2db: 89 45 d4                     	movl	%eax, -44(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:640
+;     if (rdf <= 0)
+     2de: 83 7d d0 00                  	cmpl	$0, -48(%rbp)
+     2e2: 7f 12                        	jg	18 <InfoTbl+0x46>
+     2e4: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:642
+;       info = -3.0;
+     2ec: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     2f1: e9 59 03 00 00               	jmp	857 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:647
+;       if (cdf <= 0)
+     2f6: 83 7d d4 00                  	cmpl	$0, -44(%rbp)
+     2fa: 7f 12                        	jg	18 <InfoTbl+0x5e>
+     2fc: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:649
+;         info = -3.0;
+     304: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     309: e9 41 03 00 00               	jmp	833 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:654
+;       *pdf = rdf * cdf;
+     30e: 8b 45 d0                     	movl	-48(%rbp), %eax
+     311: 0f af 45 d4                  	imull	-44(%rbp), %eax
+     315: 48 8b 8d 48 ff ff ff         	movq	-184(%rbp), %rcx
+     31c: 89 01                        	movl	%eax, (%rcx)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:655
+;       tmp = malloc((unsigned long)r___0 * sizeof(double));
+     31e: 48 63 7d e4                  	movslq	-28(%rbp), %rdi
+     322: 48 c1 e7 03                  	shlq	$3, %rdi
+     326: e8 00 00 00 00               	callq	0 <InfoTbl+0x7b>
+     32b: 48 89 85 50 ff ff ff         	movq	%rax, -176(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:656
+;       xi = (double *)tmp;
+     332: 48 8b 85 50 ff ff ff         	movq	-176(%rbp), %rax
+     339: 48 89 45 98                  	movq	%rax, -104(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:658
+;     if ((unsigned long)xi == (unsigned long)((void *)0))
+     33d: 48 8b 45 98                  	movq	-104(%rbp), %rax
+     341: 48 83 f8 00                  	cmpq	$0, %rax
+     345: 75 12                        	jne	18 <InfoTbl+0xa9>
+     347: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:660
+;       info = -4.0;
+     34f: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     354: e9 f6 02 00 00               	jmp	758 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:664
+;       tmp___0 = malloc((unsigned long)c___0 * sizeof(double));
+     359: 48 63 7d f4                  	movslq	-12(%rbp), %rdi
+     35d: 48 c1 e7 03                  	shlq	$3, %rdi
+     361: e8 00 00 00 00               	callq	0 <InfoTbl+0xb6>
+     366: 48 89 85 58 ff ff ff         	movq	%rax, -168(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:665
+;       xj = (double *)tmp___0;
+     36d: 48 8b 85 58 ff ff ff         	movq	-168(%rbp), %rax
+     374: 48 89 45 a0                  	movq	%rax, -96(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:667
+;     if ((unsigned long)xj == (unsigned long)((void *)0))
+     378: 48 8b 45 a0                  	movq	-96(%rbp), %rax
+     37c: 48 83 f8 00                  	cmpq	$0, %rax
+     380: 75 12                        	jne	18 <InfoTbl+0xe4>
+     382: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:669
+;       info = -4.0;
+     38a: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     38f: e9 bb 02 00 00               	jmp	699 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:672
+;     N = 0.0;
+     394: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     397: f2 0f 11 45 d8               	movsd	%xmm0, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:673
+;     i = 0;
+     39c: c7 45 f8 00 00 00 00         	movl	$0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:678
+;         if (!(i < r___0))
+     3a3: 8b 45 f8                     	movl	-8(%rbp), %eax
+     3a6: 3b 45 e4                     	cmpl	-28(%rbp), %eax
+     3a9: 0f 8d 9d 00 00 00            	jge	157 <InfoTbl+0x19c>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:682
+;         sum = 0.0;
+     3af: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     3b2: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:683
+;         j = 0;
+     3b7: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:688
+;             if (!(j < c___0))
+     3be: 8b 45 fc                     	movl	-4(%rbp), %eax
+     3c1: 3b 45 f4                     	cmpl	-12(%rbp), %eax
+     3c4: 7d 4d                        	jge	77 <InfoTbl+0x163>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:692
+;             k = (long)*(f___0 + (i * c___0 + j));
+     3c6: 48 8b 45 90                  	movq	-112(%rbp), %rax
+     3ca: 8b 4d f8                     	movl	-8(%rbp), %ecx
+     3cd: 0f af 4d f4                  	imull	-12(%rbp), %ecx
+     3d1: 03 4d fc                     	addl	-4(%rbp), %ecx
+     3d4: 48 63 c9                     	movslq	%ecx, %rcx
+     3d7: 48 8b 04 c8                  	movq	(%rax,%rcx,8), %rax
+     3db: 48 89 45 80                  	movq	%rax, -128(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:693
+;             if (k < 0L)
+     3df: 48 83 7d 80 00               	cmpq	$0, -128(%rbp)
+     3e4: 7d 12                        	jge	18 <InfoTbl+0x148>
+     3e6: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:695
+;               info = -2.0;
+     3ee: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     3f3: e9 57 02 00 00               	jmp	599 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:698
+;             sum += (double)k;
+     3f8: f2 48 0f 2a 45 80            	cvtsi2sdq	-128(%rbp), %xmm0
+     3fe: f2 0f 58 45 a8               	addsd	-88(%rbp), %xmm0
+     403: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:699
+;             j++;
+     408: 8b 45 fc                     	movl	-4(%rbp), %eax
+     40b: 83 c0 01                     	addl	$1, %eax
+     40e: 89 45 fc                     	movl	%eax, -4(%rbp)
+     411: eb ab                        	jmp	-85 <InfoTbl+0x10e>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:703
+;         tmp___1 = sum;
+     413: f2 0f 10 45 a8               	movsd	-88(%rbp), %xmm0
+     418: f2 0f 11 45 88               	movsd	%xmm0, -120(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:704
+;         *(xi + i) = tmp___1;
+     41d: f2 0f 10 45 88               	movsd	-120(%rbp), %xmm0
+     422: 48 8b 45 98                  	movq	-104(%rbp), %rax
+     426: 48 63 4d f8                  	movslq	-8(%rbp), %rcx
+     42a: f2 0f 11 04 c8               	movsd	%xmm0, (%rax,%rcx,8)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:705
+;         N += tmp___1;
+     42f: f2 0f 10 45 88               	movsd	-120(%rbp), %xmm0
+     434: f2 0f 58 45 d8               	addsd	-40(%rbp), %xmm0
+     439: f2 0f 11 45 d8               	movsd	%xmm0, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:706
+;         i++;
+     43e: 8b 45 f8                     	movl	-8(%rbp), %eax
+     441: 83 c0 01                     	addl	$1, %eax
+     444: 89 45 f8                     	movl	%eax, -8(%rbp)
+     447: e9 57 ff ff ff               	jmp	-169 <InfoTbl+0xf3>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:710
+;     if (N <= 0.0)
+     44c: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     44f: 66 0f 2e 45 d8               	ucomisd	-40(%rbp), %xmm0
+     454: 72 12                        	jb	18 <InfoTbl+0x1b8>
+     456: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:712
+;       info = -1.0;
+     45e: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     463: e9 e7 01 00 00               	jmp	487 <InfoTbl+0x39f>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:715
+;     j = 0;
+     468: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:720
+;         if (!(j < c___0))
+     46f: 8b 45 fc                     	movl	-4(%rbp), %eax
+     472: 3b 45 f4                     	cmpl	-12(%rbp), %eax
+     475: 7d 60                        	jge	96 <InfoTbl+0x227>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:724
+;         sum___0 = 0.0;
+     477: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     47a: f2 0f 11 45 b0               	movsd	%xmm0, -80(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:725
+;         i = 0;
+     47f: c7 45 f8 00 00 00 00         	movl	$0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:730
+;             if (!(i < r___0))
+     486: 8b 45 f8                     	movl	-8(%rbp), %eax
+     489: 3b 45 e4                     	cmpl	-28(%rbp), %eax
+     48c: 7d 2c                        	jge	44 <InfoTbl+0x20a>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:734
+;             sum___0 += (double)*(f___0 + (i * c___0 + j));
+     48e: 48 8b 45 90                  	movq	-112(%rbp), %rax
+     492: 8b 4d f8                     	movl	-8(%rbp), %ecx
+     495: 0f af 4d f4                  	imull	-12(%rbp), %ecx
+     499: 03 4d fc                     	addl	-4(%rbp), %ecx
+     49c: 48 63 c9                     	movslq	%ecx, %rcx
+     49f: f2 48 0f 2a 04 c8            	cvtsi2sdq	(%rax,%rcx,8), %xmm0
+     4a5: f2 0f 58 45 b0               	addsd	-80(%rbp), %xmm0
+     4aa: f2 0f 11 45 b0               	movsd	%xmm0, -80(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:735
+;             i++;
+     4af: 8b 45 f8                     	movl	-8(%rbp), %eax
+     4b2: 83 c0 01                     	addl	$1, %eax
+     4b5: 89 45 f8                     	movl	%eax, -8(%rbp)
+     4b8: eb cc                        	jmp	-52 <InfoTbl+0x1d6>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:739
+;         *(xj + j) = sum___0;
+     4ba: f2 0f 10 45 b0               	movsd	-80(%rbp), %xmm0
+     4bf: 48 8b 45 a0                  	movq	-96(%rbp), %rax
+     4c3: 48 63 4d fc                  	movslq	-4(%rbp), %rcx
+     4c7: f2 0f 11 04 c8               	movsd	%xmm0, (%rax,%rcx,8)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:740
+;         j++;
+     4cc: 8b 45 fc                     	movl	-4(%rbp), %eax
+     4cf: 83 c0 01                     	addl	$1, %eax
+     4d2: 89 45 fc                     	movl	%eax, -4(%rbp)
+     4d5: eb 98                        	jmp	-104 <InfoTbl+0x1bf>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:745
+;       tmp___2 = log(N);
+     4d7: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     4dc: e8 00 00 00 00               	callq	0 <InfoTbl+0x231>
+     4e1: f2 0f 11 85 60 ff ff ff      	movsd	%xmm0, -160(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:746
+;       info = N * tmp___2;
+     4e9: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     4ee: f2 0f 59 85 60 ff ff ff      	mulsd	-160(%rbp), %xmm0
+     4f6: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:747
+;       i = 0;
+     4fb: c7 45 f8 00 00 00 00         	movl	$0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:753
+;         if (!(i < r___0))
+     502: 8b 45 f8                     	movl	-8(%rbp), %eax
+     505: 3b 45 e4                     	cmpl	-28(%rbp), %eax
+     508: 0f 8d c8 00 00 00            	jge	200 <InfoTbl+0x326>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:757
+;         pi = *(xi + i);
+     50e: 48 8b 45 98                  	movq	-104(%rbp), %rax
+     512: 48 63 4d f8                  	movslq	-8(%rbp), %rcx
+     516: f2 0f 10 04 c8               	movsd	(%rax,%rcx,8), %xmm0
+     51b: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:758
+;         if (pi > 0.0)
+     520: f2 0f 10 45 b8               	movsd	-72(%rbp), %xmm0
+     525: 0f 57 c9                     	xorps	%xmm1, %xmm1
+     528: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     52c: 76 2d                        	jbe	45 <InfoTbl+0x2ab>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:762
+;             tmp___3 = log(pi);
+     52e: f2 0f 10 45 b8               	movsd	-72(%rbp), %xmm0
+     533: e8 00 00 00 00               	callq	0 <InfoTbl+0x288>
+     538: f2 0f 11 85 68 ff ff ff      	movsd	%xmm0, -152(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:763
+;             info -= pi * tmp___3;
+     540: f2 0f 10 45 b8               	movsd	-72(%rbp), %xmm0
+     545: f2 0f 59 85 68 ff ff ff      	mulsd	-152(%rbp), %xmm0
+     54d: f2 0f 10 4d e8               	movsd	-24(%rbp), %xmm1
+     552: f2 0f 5c c8                  	subsd	%xmm0, %xmm1
+     556: f2 0f 11 4d e8               	movsd	%xmm1, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:766
+;         j = 0;
+     55b: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:771
+;             if (!(j < c___0))
+     562: 8b 45 fc                     	movl	-4(%rbp), %eax
+     565: 3b 45 f4                     	cmpl	-12(%rbp), %eax
+     568: 7d 5e                        	jge	94 <InfoTbl+0x318>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:775
+;             pij = (double)*(f___0 + (i * c___0 + j));
+     56a: 48 8b 45 90                  	movq	-112(%rbp), %rax
+     56e: 8b 4d f8                     	movl	-8(%rbp), %ecx
+     571: 0f af 4d f4                  	imull	-12(%rbp), %ecx
+     575: 03 4d fc                     	addl	-4(%rbp), %ecx
+     578: 48 63 c9                     	movslq	%ecx, %rcx
+     57b: f2 48 0f 2a 04 c8            	cvtsi2sdq	(%rax,%rcx,8), %xmm0
+     581: f2 0f 11 45 c0               	movsd	%xmm0, -64(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:776
+;             if (pij > 0.0)
+     586: f2 0f 10 45 c0               	movsd	-64(%rbp), %xmm0
+     58b: 0f 57 c9                     	xorps	%xmm1, %xmm1
+     58e: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     592: 76 29                        	jbe	41 <InfoTbl+0x30d>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:779
+;                 tmp___4 = log(pij);
+     594: f2 0f 10 45 c0               	movsd	-64(%rbp), %xmm0
+     599: e8 00 00 00 00               	callq	0 <InfoTbl+0x2ee>
+     59e: f2 0f 11 85 70 ff ff ff      	movsd	%xmm0, -144(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:780
+;                 info += pij * tmp___4;
+     5a6: f2 0f 10 45 c0               	movsd	-64(%rbp), %xmm0
+     5ab: f2 0f 59 85 70 ff ff ff      	mulsd	-144(%rbp), %xmm0
+     5b3: f2 0f 58 45 e8               	addsd	-24(%rbp), %xmm0
+     5b8: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:783
+;             j++;
+     5bd: 8b 45 fc                     	movl	-4(%rbp), %eax
+     5c0: 83 c0 01                     	addl	$1, %eax
+     5c3: 89 45 fc                     	movl	%eax, -4(%rbp)
+     5c6: eb 9a                        	jmp	-102 <InfoTbl+0x2b2>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:787
+;         i++;
+     5c8: 8b 45 f8                     	movl	-8(%rbp), %eax
+     5cb: 83 c0 01                     	addl	$1, %eax
+     5ce: 89 45 f8                     	movl	%eax, -8(%rbp)
+     5d1: e9 2c ff ff ff               	jmp	-212 <InfoTbl+0x252>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:791
+;     j = 0;
+     5d6: c7 45 fc 00 00 00 00         	movl	$0, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:796
+;         if (!(j < c___0))
+     5dd: 8b 45 fc                     	movl	-4(%rbp), %eax
+     5e0: 3b 45 f4                     	cmpl	-12(%rbp), %eax
+     5e3: 7d 58                        	jge	88 <InfoTbl+0x38d>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:800
+;         pj = *(xj + j);
+     5e5: 48 8b 45 a0                  	movq	-96(%rbp), %rax
+     5e9: 48 63 4d fc                  	movslq	-4(%rbp), %rcx
+     5ed: f2 0f 10 04 c8               	movsd	(%rax,%rcx,8), %xmm0
+     5f2: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:801
+;         if (pj > 0.0)
+     5f7: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     5fc: 0f 57 c9                     	xorps	%xmm1, %xmm1
+     5ff: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     603: 76 2d                        	jbe	45 <InfoTbl+0x382>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:804
+;             tmp___5 = log(pj);
+     605: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     60a: e8 00 00 00 00               	callq	0 <InfoTbl+0x35f>
+     60f: f2 0f 11 85 78 ff ff ff      	movsd	%xmm0, -136(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:805
+;             info -= pj * tmp___5;
+     617: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     61c: f2 0f 59 85 78 ff ff ff      	mulsd	-136(%rbp), %xmm0
+     624: f2 0f 10 4d e8               	movsd	-24(%rbp), %xmm1
+     629: f2 0f 5c c8                  	subsd	%xmm0, %xmm1
+     62d: f2 0f 11 4d e8               	movsd	%xmm1, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:808
+;         j++;
+     632: 8b 45 fc                     	movl	-4(%rbp), %eax
+     635: 83 c0 01                     	addl	$1, %eax
+     638: 89 45 fc                     	movl	%eax, -4(%rbp)
+     63b: eb a0                        	jmp	-96 <InfoTbl+0x32d>
+     63d: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:812
+;     info *= 2.0;
+     645: f2 0f 59 45 e8               	mulsd	-24(%rbp), %xmm0
+     64a: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:850
+;     return (info);
+     64f: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     654: 48 81 c4 c0 00 00 00         	addq	$192, %rsp
+     65b: 5d                           	popq	%rbp
+     65c: c3                           	retq
+     65d: 90                           	nop
+     65e: 90                           	nop
+     65f: 90                           	nop
+
+0000000000000660 QChiSq:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:601
+; {
+     660: 55                           	pushq	%rbp
+     661: 48 89 e5                     	movq	%rsp, %rbp
+     664: 48 83 ec 20                  	subq	$32, %rsp
+     668: f2 0f 10 15 00 00 00 00      	movsd	(%rip), %xmm2
+     670: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+     675: 89 7d fc                     	movl	%edi, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:606
+;       tmp = QGamma((double)df / 2.0, chisq / 2.0);
+     678: f2 0f 2a 45 fc               	cvtsi2sdl	-4(%rbp), %xmm0
+     67d: f2 0f 5e c2                  	divsd	%xmm2, %xmm0
+     681: f2 0f 10 4d e8               	movsd	-24(%rbp), %xmm1
+     686: f2 0f 5e ca                  	divsd	%xmm2, %xmm1
+     68a: e8 00 00 00 00               	callq	0 <QChiSq+0x2f>
+     68f: f2 0f 11 45 f0               	movsd	%xmm0, -16(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:608
+;     return (tmp);
+     694: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     699: 48 83 c4 20                  	addq	$32, %rsp
+     69d: 5d                           	popq	%rbp
+     69e: c3                           	retq
+     69f: 90                           	nop
+
+00000000000006a0 LGamma:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:277
+; {
+     6a0: 55                           	pushq	%rbp
+     6a1: 48 89 e5                     	movq	%rsp, %rbp
+     6a4: 48 83 ec 60                  	subq	$96, %rsp
+     6a8: f2 0f 10 0d 00 00 00 00      	movsd	(%rip), %xmm1
+     6b0: f2 0f 11 45 f8               	movsd	%xmm0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:289
+;     x -= (double)1;
+     6b5: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     6ba: f2 0f 5c c1                  	subsd	%xmm1, %xmm0
+     6be: f2 0f 11 45 f8               	movsd	%xmm0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:290
+;     if (x < 0.0)
+     6c3: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     6c6: 66 0f 2e 45 f8               	ucomisd	-8(%rbp), %xmm0
+     6cb: 76 63                        	jbe	99 <LGamma+0x90>
+     6cd: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:293
+;         pix = 3.14159265358979323846264338327950288419716939937511 * x;
+     6d5: f2 0f 59 45 f8               	mulsd	-8(%rbp), %xmm0
+     6da: f2 0f 11 45 d8               	movsd	%xmm0, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:294
+;         tmp___0 = sin(pix);
+     6df: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     6e4: e8 00 00 00 00               	callq	0 <LGamma+0x49>
+     6e9: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:295
+;         tmp___1 = log(pix / tmp___0);
+     6ee: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     6f3: f2 0f 5e 45 a8               	divsd	-88(%rbp), %xmm0
+     6f8: e8 00 00 00 00               	callq	0 <LGamma+0x5d>
+     6fd: f2 0f 10 0d 00 00 00 00      	movsd	(%rip), %xmm1
+     705: f2 0f 11 45 b0               	movsd	%xmm0, -80(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:296
+;         tmp___2 = LGamma(1.0 - x);
+     70a: f2 0f 5c 4d f8               	subsd	-8(%rbp), %xmm1
+     70f: 0f 28 c1                     	movaps	%xmm1, %xmm0
+     712: e8 00 00 00 00               	callq	0 <LGamma+0x77>
+     717: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:298
+;       return (tmp___1 - tmp___2);
+     71c: f2 0f 10 45 b0               	movsd	-80(%rbp), %xmm0
+     721: f2 0f 5c 45 b8               	subsd	-72(%rbp), %xmm0
+     726: f2 0f 11 45 d0               	movsd	%xmm0, -48(%rbp)
+     72b: e9 d1 00 00 00               	jmp	209 <LGamma+0x161>
+     730: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:301
+;       tmp = x + 5.5;
+     738: f2 0f 58 45 f8               	addsd	-8(%rbp), %xmm0
+     73d: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:302
+;       tmp___3 = log(tmp);
+     742: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     747: e8 00 00 00 00               	callq	0 <LGamma+0xac>
+     74c: f2 0f 10 0d 00 00 00 00      	movsd	(%rip), %xmm1
+     754: f2 0f 10 15 00 00 00 00      	movsd	(%rip), %xmm2
+     75c: f2 0f 11 45 c0               	movsd	%xmm0, -64(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:303
+;       tmp -= (x + 0.5) * tmp___3;
+     761: f2 0f 58 55 f8               	addsd	-8(%rbp), %xmm2
+     766: f2 0f 59 55 c0               	mulsd	-64(%rbp), %xmm2
+     76b: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     770: f2 0f 5c c2                  	subsd	%xmm2, %xmm0
+     774: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:304
+;       ser = 1.0;
+     779: f2 0f 11 4d e0               	movsd	%xmm1, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:305
+;       j = 0;
+     77e: c7 45 f4 00 00 00 00         	movl	$0, -12(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:323
+;         if (!(j < 6))
+     785: 83 7d f4 06                  	cmpl	$6, -12(%rbp)
+     789: 7d 39                        	jge	57 <LGamma+0x124>
+     78b: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:327
+;         x += (double)1;
+     793: f2 0f 58 45 f8               	addsd	-8(%rbp), %xmm0
+     798: f2 0f 11 45 f8               	movsd	%xmm0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:328
+;         ser += (double)(cof[j] / (double const)x);
+     79d: 48 63 45 f4                  	movslq	-12(%rbp), %rax
+     7a1: f2 0f 10 04 c5 00 00 00 00   	movsd	(,%rax,8), %xmm0
+     7aa: f2 0f 5e 45 f8               	divsd	-8(%rbp), %xmm0
+     7af: f2 0f 58 45 e0               	addsd	-32(%rbp), %xmm0
+     7b4: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:329
+;         j++;
+     7b9: 8b 45 f4                     	movl	-12(%rbp), %eax
+     7bc: 83 c0 01                     	addl	$1, %eax
+     7bf: 89 45 f4                     	movl	%eax, -12(%rbp)
+     7c2: eb c1                        	jmp	-63 <LGamma+0xe5>
+     7c4: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:334
+;       tmp___4 = log(2.50662827465 * ser);
+     7cc: f2 0f 59 45 e0               	mulsd	-32(%rbp), %xmm0
+     7d1: e8 00 00 00 00               	callq	0 <LGamma+0x136>
+     7d6: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:336
+;     return (-tmp + tmp___4);
+     7db: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     7e0: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     7e5: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     7ef: 48 31 c8                     	xorq	%rcx, %rax
+     7f2: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     7f7: f2 0f 58 45 c8               	addsd	-56(%rbp), %xmm0
+     7fc: f2 0f 11 45 d0               	movsd	%xmm0, -48(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:338
+; }
+     801: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     806: 48 83 c4 60                  	addq	$96, %rsp
+     80a: 5d                           	popq	%rbp
+     80b: c3                           	retq
+     80c: 90                           	nop
+     80d: 90                           	nop
+     80e: 90                           	nop
+     80f: 90                           	nop
+
+0000000000000810 QGamma:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:576
+; {
+     810: 55                           	pushq	%rbp
+     811: 48 89 e5                     	movq	%rsp, %rbp
+     814: 48 83 ec 30                  	subq	$48, %rsp
+     818: f2 0f 10 15 00 00 00 00      	movsd	(%rip), %xmm2
+     820: f2 0f 11 45 f0               	movsd	%xmm0, -16(%rbp)
+     825: f2 0f 11 4d f8               	movsd	%xmm1, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:582
+;     if (x < a + 1.0)
+     82a: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     82f: f2 0f 58 55 f0               	addsd	-16(%rbp), %xmm2
+     834: 66 0f 2e d0                  	ucomisd	%xmm0, %xmm2
+     838: 76 28                        	jbe	40 <QGamma+0x52>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:585
+;         tmp = gser(a, x);
+     83a: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     83f: f2 0f 10 4d f8               	movsd	-8(%rbp), %xmm1
+     844: e8 47 00 00 00               	callq	71 <gser>
+     849: f2 0f 10 0d 00 00 00 00      	movsd	(%rip), %xmm1
+     851: f2 0f 11 45 d8               	movsd	%xmm0, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:586
+;         tmp___1 = 1.0 - tmp;
+     856: f2 0f 5c 4d d8               	subsd	-40(%rbp), %xmm1
+     85b: f2 0f 11 4d e8               	movsd	%xmm1, -24(%rbp)
+     860: eb 1e                        	jmp	30 <QGamma+0x70>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:592
+;         tmp___0 = gcf(a, x);
+     862: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     867: f2 0f 10 4d f8               	movsd	-8(%rbp), %xmm1
+     86c: e8 cf 01 00 00               	callq	463 <gcf>
+     871: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:593
+;         tmp___1 = tmp___0;
+     876: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     87b: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:597
+;     return (tmp___1);
+     880: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     885: 48 83 c4 30                  	addq	$48, %rsp
+     889: 5d                           	popq	%rbp
+     88a: c3                           	retq
+     88b: 90                           	nop
+     88c: 90                           	nop
+     88d: 90                           	nop
+     88e: 90                           	nop
+     88f: 90                           	nop
+
+0000000000000890 gser:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:340
+; {
+     890: 55                           	pushq	%rbp
+     891: 48 89 e5                     	movq	%rsp, %rbp
+     894: 48 83 ec 60                  	subq	$96, %rsp
+     898: f2 0f 11 45 d0               	movsd	%xmm0, -48(%rbp)
+     89d: f2 0f 11 4d d8               	movsd	%xmm1, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:352
+;     if (x <= 0.0)
+     8a2: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     8a5: 66 0f 2e 45 d8               	ucomisd	-40(%rbp), %xmm0
+     8aa: 72 0d                        	jb	13 <gser+0x29>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:354
+;       return (0.0);
+     8ac: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     8af: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+     8b4: e9 70 01 00 00               	jmp	368 <gser+0x199>
+     8b9: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:356
+;     ap = a;
+     8c1: f2 0f 10 4d d0               	movsd	-48(%rbp), %xmm1
+     8c6: f2 0f 11 4d e0               	movsd	%xmm1, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:357
+;     sum = 1.0 / ap;
+     8cb: f2 0f 5e 45 e0               	divsd	-32(%rbp), %xmm0
+     8d0: f2 0f 11 45 f8               	movsd	%xmm0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:358
+;     del = sum;
+     8d5: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     8da: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:359
+;     n = 1;
+     8df: c7 45 f4 01 00 00 00         	movl	$1, -12(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:364
+;         if (!(n <= 100))
+     8e6: 83 7d f4 64                  	cmpl	$100, -12(%rbp)
+     8ea: 0f 8f 31 01 00 00            	jg	305 <gser+0x191>
+     8f0: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:368
+;         ap += (double)1;
+     8f8: f2 0f 58 45 e0               	addsd	-32(%rbp), %xmm0
+     8fd: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:369
+;         del *= x / ap;
+     902: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     907: f2 0f 5e 45 e0               	divsd	-32(%rbp), %xmm0
+     90c: f2 0f 59 45 e8               	mulsd	-24(%rbp), %xmm0
+     911: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:370
+;         sum += del;
+     916: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     91b: f2 0f 58 45 f8               	addsd	-8(%rbp), %xmm0
+     920: f2 0f 11 45 f8               	movsd	%xmm0, -8(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:371
+;         if (del < (double)0)
+     925: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     928: 66 0f 2e 45 e8               	ucomisd	-24(%rbp), %xmm0
+     92d: 76 23                        	jbe	35 <gser+0xc2>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:373
+;           tmp___2 = -del;
+     92f: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     934: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     939: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     943: 48 31 c8                     	xorq	%rcx, %rax
+     946: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     94b: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+     950: eb 0a                        	jmp	10 <gser+0xcc>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:377
+;           tmp___2 = del;
+     952: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     957: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:379
+;         if (sum < (double)0)
+     95c: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     95f: 66 0f 2e 45 f8               	ucomisd	-8(%rbp), %xmm0
+     964: 76 23                        	jbe	35 <gser+0xf9>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:381
+;           tmp___3 = -sum;
+     966: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     96b: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     970: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     97a: 48 31 c8                     	xorq	%rcx, %rax
+     97d: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     982: f2 0f 11 45 c0               	movsd	%xmm0, -64(%rbp)
+     987: eb 0a                        	jmp	10 <gser+0x103>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:385
+;           tmp___3 = sum;
+     989: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     98e: f2 0f 11 45 c0               	movsd	%xmm0, -64(%rbp)
+     993: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:387
+;         if (tmp___2 < tmp___3 * 3.0e-7)
+     99b: f2 0f 10 4d b8               	movsd	-72(%rbp), %xmm1
+     9a0: f2 0f 59 45 c0               	mulsd	-64(%rbp), %xmm0
+     9a5: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     9a9: 76 68                        	jbe	104 <gser+0x183>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:390
+;             tmp = log(x);
+     9ab: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     9b0: e8 00 00 00 00               	callq	0 <gser+0x125>
+     9b5: f2 0f 11 45 a0               	movsd	%xmm0, -96(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:391
+;             tmp___0 = LGamma(a);
+     9ba: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     9bf: e8 00 00 00 00               	callq	0 <gser+0x134>
+     9c4: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:392
+;             tmp___1 = exp((-x + a * tmp) - tmp___0);
+     9c9: f2 0f 10 45 d8               	movsd	-40(%rbp), %xmm0
+     9ce: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     9d3: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     9dd: 48 31 c8                     	xorq	%rcx, %rax
+     9e0: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     9e5: f2 0f 10 4d d0               	movsd	-48(%rbp), %xmm1
+     9ea: f2 0f 59 4d a0               	mulsd	-96(%rbp), %xmm1
+     9ef: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     9f3: f2 0f 5c 45 a8               	subsd	-88(%rbp), %xmm0
+     9f8: e8 00 00 00 00               	callq	0 <gser+0x16d>
+     9fd: f2 0f 11 45 b0               	movsd	%xmm0, -80(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:394
+;           return (sum * tmp___1);
+     a02: f2 0f 10 45 f8               	movsd	-8(%rbp), %xmm0
+     a07: f2 0f 59 45 b0               	mulsd	-80(%rbp), %xmm0
+     a0c: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+     a11: eb 16                        	jmp	22 <gser+0x199>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:396
+;         n++;
+     a13: 8b 45 f4                     	movl	-12(%rbp), %eax
+     a16: 83 c0 01                     	addl	$1, %eax
+     a19: 89 45 f4                     	movl	%eax, -12(%rbp)
+     a1c: e9 c5 fe ff ff               	jmp	-315 <gser+0x56>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:400
+;     return ((double)0);
+     a21: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     a24: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:418
+; }
+     a29: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     a2e: 48 83 c4 60                  	addq	$96, %rsp
+     a32: 5d                           	popq	%rbp
+     a33: c3                           	retq
+     a34: 90                           	nop
+     a35: 90                           	nop
+     a36: 90                           	nop
+     a37: 90                           	nop
+     a38: 90                           	nop
+     a39: 90                           	nop
+     a3a: 90                           	nop
+     a3b: 90                           	nop
+     a3c: 90                           	nop
+     a3d: 90                           	nop
+     a3e: 90                           	nop
+     a3f: 90                           	nop
+
+0000000000000a40 gcf:
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:420
+; {
+     a40: 55                           	pushq	%rbp
+     a41: 48 89 e5                     	movq	%rsp, %rbp
+     a44: 48 81 ec a0 00 00 00         	subq	$160, %rsp
+     a4b: f2 0f 10 15 00 00 00 00      	movsd	(%rip), %xmm2
+     a53: f2 0f 11 45 b0               	movsd	%xmm0, -80(%rbp)
+     a58: f2 0f 11 4d d0               	movsd	%xmm1, -48(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:439
+;     gold = 0.0;
+     a5d: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     a60: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:440
+;     fac = 1.0;
+     a65: f2 0f 11 55 d8               	movsd	%xmm2, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:441
+;     b1 = 1.0;
+     a6a: f2 0f 11 55 c8               	movsd	%xmm2, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:442
+;     b0 = 0.0;
+     a6f: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:443
+;     a0 = 1.0;
+     a74: f2 0f 11 55 c0               	movsd	%xmm2, -64(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:444
+;     a1 = x;
+     a79: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     a7e: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:445
+;     n = 1;
+     a83: c7 45 fc 01 00 00 00         	movl	$1, -4(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:450
+;         if (!(n <= 100))
+     a8a: 83 7d fc 64                  	cmpl	$100, -4(%rbp)
+     a8e: 0f 8f f9 01 00 00            	jg	505 <gcf+0x24d>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:454
+;         an = (double)n;
+     a94: f2 0f 2a 45 fc               	cvtsi2sdl	-4(%rbp), %xmm0
+     a99: f2 0f 11 45 90               	movsd	%xmm0, -112(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:455
+;         ana = an - a;
+     a9e: f2 0f 10 45 90               	movsd	-112(%rbp), %xmm0
+     aa3: f2 0f 5c 45 b0               	subsd	-80(%rbp), %xmm0
+     aa8: f2 0f 11 45 98               	movsd	%xmm0, -104(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:456
+;         a0 = (a1 + a0 * ana) * fac;
+     aad: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     ab2: f2 0f 10 4d c0               	movsd	-64(%rbp), %xmm1
+     ab7: f2 0f 59 4d 98               	mulsd	-104(%rbp), %xmm1
+     abc: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     ac0: f2 0f 59 45 d8               	mulsd	-40(%rbp), %xmm0
+     ac5: f2 0f 11 45 c0               	movsd	%xmm0, -64(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:457
+;         b0 = (b1 + b0 * ana) * fac;
+     aca: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     acf: f2 0f 10 4d b8               	movsd	-72(%rbp), %xmm1
+     ad4: f2 0f 59 4d 98               	mulsd	-104(%rbp), %xmm1
+     ad9: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     add: f2 0f 59 45 d8               	mulsd	-40(%rbp), %xmm0
+     ae2: f2 0f 11 45 b8               	movsd	%xmm0, -72(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:458
+;         anf = an * fac;
+     ae7: f2 0f 10 45 90               	movsd	-112(%rbp), %xmm0
+     aec: f2 0f 59 45 d8               	mulsd	-40(%rbp), %xmm0
+     af1: f2 0f 11 45 88               	movsd	%xmm0, -120(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:459
+;         b1 = x * b0 + anf * b1;
+     af6: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     afb: f2 0f 59 45 b8               	mulsd	-72(%rbp), %xmm0
+     b00: f2 0f 10 4d 88               	movsd	-120(%rbp), %xmm1
+     b05: f2 0f 59 4d c8               	mulsd	-56(%rbp), %xmm1
+     b0a: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     b0e: f2 0f 11 45 c8               	movsd	%xmm0, -56(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:460
+;         a1 = x * a0 + anf * a1;
+     b13: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     b18: f2 0f 59 45 c0               	mulsd	-64(%rbp), %xmm0
+     b1d: f2 0f 10 4d 88               	movsd	-120(%rbp), %xmm1
+     b22: f2 0f 59 4d e0               	mulsd	-32(%rbp), %xmm1
+     b27: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     b2b: f2 0f 11 45 e0               	movsd	%xmm0, -32(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:461
+;         if (a1 != 0.0)
+     b30: f2 0f 10 45 e0               	movsd	-32(%rbp), %xmm0
+     b35: 0f 57 c9                     	xorps	%xmm1, %xmm1
+     b38: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     b3c: 75 07                        	jne	7 <gcf+0x105>
+     b3e: 7a 05                        	jp	5 <gcf+0x105>
+     b40: e9 3a 01 00 00               	jmp	314 <gcf+0x23f>
+     b45: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:463
+;           fac = 1.0 / a1;
+     b4d: f2 0f 5e 45 e0               	divsd	-32(%rbp), %xmm0
+     b52: f2 0f 11 45 d8               	movsd	%xmm0, -40(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:464
+;           g = b1 * fac;
+     b57: f2 0f 10 45 c8               	movsd	-56(%rbp), %xmm0
+     b5c: f2 0f 59 45 d8               	mulsd	-40(%rbp), %xmm0
+     b61: f2 0f 11 45 f0               	movsd	%xmm0, -16(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:465
+;           gold = g - gold;
+     b66: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     b6b: f2 0f 5c 45 e8               	subsd	-24(%rbp), %xmm0
+     b70: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:466
+;           if (gold < (double)0)
+     b75: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     b78: 66 0f 2e 45 e8               	ucomisd	-24(%rbp), %xmm0
+     b7d: 76 23                        	jbe	35 <gcf+0x162>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:468
+;             tmp___2 = -gold;
+     b7f: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     b84: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     b89: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     b93: 48 31 c8                     	xorq	%rcx, %rax
+     b96: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     b9b: f2 0f 11 45 a0               	movsd	%xmm0, -96(%rbp)
+     ba0: eb 0a                        	jmp	10 <gcf+0x16c>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:472
+;             tmp___2 = gold;
+     ba2: f2 0f 10 45 e8               	movsd	-24(%rbp), %xmm0
+     ba7: f2 0f 11 45 a0               	movsd	%xmm0, -96(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:474
+;           if (g < (double)0)
+     bac: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     baf: 66 0f 2e 45 f0               	ucomisd	-16(%rbp), %xmm0
+     bb4: 76 23                        	jbe	35 <gcf+0x199>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:476
+;             tmp___3 = -g;
+     bb6: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     bbb: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     bc0: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     bca: 48 31 c8                     	xorq	%rcx, %rax
+     bcd: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     bd2: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+     bd7: eb 0a                        	jmp	10 <gcf+0x1a3>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:480
+;             tmp___3 = g;
+     bd9: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     bde: f2 0f 11 45 a8               	movsd	%xmm0, -88(%rbp)
+     be3: f2 0f 10 05 00 00 00 00      	movsd	(%rip), %xmm0
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:482
+;           if (tmp___2 < 3.0e-7 * tmp___3)
+     beb: f2 0f 10 4d a0               	movsd	-96(%rbp), %xmm1
+     bf0: f2 0f 59 45 a8               	mulsd	-88(%rbp), %xmm0
+     bf5: 66 0f 2e c1                  	ucomisd	%xmm1, %xmm0
+     bf9: 76 7a                        	jbe	122 <gcf+0x235>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:485
+;               tmp = log(x);
+     bfb: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     c00: e8 00 00 00 00               	callq	0 <gcf+0x1c5>
+     c05: f2 0f 11 85 68 ff ff ff      	movsd	%xmm0, -152(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:486
+;               tmp___0 = LGamma(a);
+     c0d: f2 0f 10 45 b0               	movsd	-80(%rbp), %xmm0
+     c12: e8 00 00 00 00               	callq	0 <gcf+0x1d7>
+     c17: f2 0f 11 85 70 ff ff ff      	movsd	%xmm0, -144(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:487
+;               tmp___1 = exp((-x + a * tmp) - tmp___0);
+     c1f: f2 0f 10 45 d0               	movsd	-48(%rbp), %xmm0
+     c24: 66 48 0f 7e c0               	movq	%xmm0, %rax
+     c29: 48 b9 00 00 00 00 00 00 00 80	movabsq	$-9223372036854775808, %rcx
+     c33: 48 31 c8                     	xorq	%rcx, %rax
+     c36: 66 48 0f 6e c0               	movq	%rax, %xmm0
+     c3b: f2 0f 10 4d b0               	movsd	-80(%rbp), %xmm1
+     c40: f2 0f 59 8d 68 ff ff ff      	mulsd	-152(%rbp), %xmm1
+     c48: f2 0f 58 c1                  	addsd	%xmm1, %xmm0
+     c4c: f2 0f 5c 85 70 ff ff ff      	subsd	-144(%rbp), %xmm0
+     c54: e8 00 00 00 00               	callq	0 <gcf+0x219>
+     c59: f2 0f 11 85 78 ff ff ff      	movsd	%xmm0, -136(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:489
+;             return (tmp___1 * g);
+     c61: f2 0f 10 85 78 ff ff ff      	movsd	-136(%rbp), %xmm0
+     c69: f2 0f 59 45 f0               	mulsd	-16(%rbp), %xmm0
+     c6e: f2 0f 11 45 80               	movsd	%xmm0, -128(%rbp)
+     c73: eb 20                        	jmp	32 <gcf+0x255>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:491
+;           gold = g;
+     c75: f2 0f 10 45 f0               	movsd	-16(%rbp), %xmm0
+     c7a: f2 0f 11 45 e8               	movsd	%xmm0, -24(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:493
+;         n++;
+     c7f: 8b 45 fc                     	movl	-4(%rbp), %eax
+     c82: 83 c0 01                     	addl	$1, %eax
+     c85: 89 45 fc                     	movl	%eax, -4(%rbp)
+     c88: e9 fd fd ff ff               	jmp	-515 <gcf+0x4a>
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:497
+;     return ((double)0);
+     c8d: 0f 57 c0                     	xorps	%xmm0, %xmm0
+     c90: f2 0f 11 45 80               	movsd	%xmm0, -128(%rbp)
+; /home/isabel0715/workspace/CrashRepair/benchmark/totinfo-input-fuzz/src/totinfo.original.aligned.c:574
+; }
+     c95: f2 0f 10 45 80               	movsd	-128(%rbp), %xmm0
+     c9a: 48 81 c4 a0 00 00 00         	addq	$160, %rsp
+     ca1: 5d                           	popq	%rbp
+     ca2: c3                           	retq

@@ -1,0 +1,14 @@
+1
+649:atoi
+6
+638:fprintf 639:fprintf 640:fprintf 641:fprintf 642:fprintf 643:exit
+?
+
+# Format:
+#   number_of_slicing_criteria_in_debloated_program
+#   line1:func1 line2:func2 ...
+#   number_of_slicing_criteria_in_original_program
+#   line1:func1 line2:func2 ...
+#   line_number_of_crash_statement
+# (line number is '?' when failing to locate the line)
+# (function name is '?' for crash location)
