@@ -1,0 +1,25 @@
+==========================================  Summary  =========================================
+No.                   KeyLineNo   Validity         RetCode          #AddedLines        #RelevantLine
+Fix 1                      4923    Invalid             139                    3                    4
+Fix 2                      3426    Invalid             139                    8                  106
+Fix 3                      3430    Invalid             139                    4                  101
+Fix 4                      3440    Invalid             139                    4                   90
+Fix 5                      4204    Invalid             139                    9                   12
+Fix 6                      4205    Invalid             139                    2                    2
+Fix 7                      4206    Invalid             139                    5                    7
+Fix 8                      4962    Invalid         Failure                    1                    1
+Fix 9                      4208    Invalid             139                   26                   30
+Fix 10                     4218    Invalid             139                    4                    4
+Fix 11                     4225    Invalid             139                    2                    2
+Fix 12                     4226    Invalid             139                   79                  202
+Fix 13                     4227    Invalid             139                    1                   42
+Fix 14                     4228    Invalid             139                   15                   95
+Fix 15                     4229    Invalid             139                    1                    2
+Fix 16                     4230    Invalid             139                   12                   92
+Fix 17                     4231    Invalid             139                   10                   90
+Fix 18                     4232    Invalid             139                    8                   88
+Fix 19                     4241    Invalid             139                    5                    8
+Fix 20                     4244    Invalid             139                   53                   55
+====================================================================================================
+Total:  20
+Valid Fixes: 0

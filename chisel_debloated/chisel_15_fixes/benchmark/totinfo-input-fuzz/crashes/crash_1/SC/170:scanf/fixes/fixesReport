@@ -1,9 +1,0 @@
-============================  Fixes of Slicing Criterion Line 170  =======================
-No.         KeyLineNo   RelevantLinesCount    AddBackLinesCount    RetCode        Validity
-Fix 1             144                   11                    7          1           Valid
-Fix 2             105                   18                    5        139          Inalid
-Fix 3              88                    2                    1        139          Inalid
-Fix 4              87                    2                    1        139          Inalid
-==========================================================================================
-Total:  4
-Valid Fixes: 1

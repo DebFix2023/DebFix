@@ -1,8 +1,0 @@
-#!/bin/bash
-fixedFileBin=$1
-
-echo $fixedFileBin
-
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-{ timeout -k 1 1 ${fixedFileBin} -E '\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' < $SCRIPT_DIR/input; }

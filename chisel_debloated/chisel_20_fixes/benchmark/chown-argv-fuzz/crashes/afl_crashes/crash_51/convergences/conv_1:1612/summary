@@ -1,0 +1,25 @@
+==========================================  Summary  =========================================
+No.                   KeyLineNo   Validity         RetCode          #AddedLines        #RelevantLine
+Fix 1                      1614      Valid               1                  327                  340
+Fix 2                      1616    Invalid             139                  300                  307
+Fix 3                       897    Invalid         Failure                    2                    2
+Fix 4                       898    Invalid         Failure                   17                   18
+Fix 5                       900    Invalid         Failure                    7                    8
+Fix 6                       915    Invalid         Failure                   10                   10
+Fix 7                       921    Invalid         Failure                    3                    3
+Fix 8                       923    Invalid         Failure                    2                    2
+Fix 9                       924    Invalid         Failure                    3                    3
+Fix 10                      925    Invalid         Failure                   14                   15
+Fix 11                      927    Invalid         Failure                    2                    3
+Fix 12                      928    Invalid         Failure                    7                    7
+Fix 13                      930    Invalid         Failure                    2                    2
+Fix 14                      936    Invalid         Failure                    5                    5
+Fix 15                      940    Invalid         Failure                    2                    3
+Fix 16                      941    Invalid             139                    2                    2
+Fix 17                      942    Invalid         Failure                    3                    4
+Fix 18                      943    Invalid         Failure                   45                   47
+Fix 19                      945    Invalid         Failure                   26                   27
+Fix 20                      947    Invalid         Failure                   19                   20
+====================================================================================================
+Total:  20
+Valid Fixes: 1
