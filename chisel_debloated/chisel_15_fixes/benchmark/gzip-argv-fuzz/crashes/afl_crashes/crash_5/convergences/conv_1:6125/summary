@@ -1,0 +1,20 @@
+==========================================  Summary  =========================================
+No.                   KeyLineNo   Validity         RetCode          #AddedLines        #RelevantLine
+Fix 1                      6126    Invalid         Failure                   68                   78
+Fix 2                      6128    Invalid             139                    1                    2
+Fix 3                      6129    Invalid             139                    1                    2
+Fix 4                      6130    Invalid         Failure                   59                   69
+Fix 5                      6132    Invalid             139                    1                    2
+Fix 6                      6133    Invalid             139                    1                    2
+Fix 7                      6134    Invalid         Failure                   50                   60
+Fix 8                      6136    Invalid             139                    1                    2
+Fix 9                      6137    Invalid             139                    1                    2
+Fix 10                     6138    Invalid         Failure                   41                   51
+Fix 11                     6140    Invalid             139                    1                    2
+Fix 12                     6141    Invalid             139                    1                    2
+Fix 13                     6142    Invalid         Failure                   32                   42
+Fix 14                     6144    Invalid             139                    1                    2
+Fix 15                     6145    Invalid             139                    1                    2
+====================================================================================================
+Total:  15
+Valid Fixes: 0
