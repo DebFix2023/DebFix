@@ -1,8 +1,0 @@
-Crash input link:
-Crash Type:
-Crash method: 
-Crash line number (in *.reduced.c):
-
- 
-Fix method: 
-Fix line number (in *.origin.c):

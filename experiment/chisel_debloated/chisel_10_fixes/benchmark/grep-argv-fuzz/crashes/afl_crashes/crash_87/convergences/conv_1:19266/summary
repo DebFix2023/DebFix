@@ -1,0 +1,15 @@
+==========================================  Summary  =========================================
+No.                   KeyLineNo   Validity         RetCode          #AddedLines        #RelevantLine
+Fix 1                     19268    Invalid             139                    1                    1
+Fix 2                     19644    Invalid             139                    2                    2
+Fix 3                     19758    Invalid             139                    1                    1
+Fix 4                     19256    Invalid         Failure                    4                    9
+Fix 5                     20046    Invalid         Failure                   36                   45
+Fix 6                     20057    Invalid             139                   30                   33
+Fix 7                     20067    Invalid             139                   19                   22
+Fix 8                     20077    Invalid             139                    8                   11
+Fix 9                     20097    Invalid             139                   42                   54
+Fix 10                    20100    Invalid             139                   38                   45
+====================================================================================================
+Total:  10
+Valid Fixes: 0
